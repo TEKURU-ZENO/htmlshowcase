@@ -1,0 +1,156 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #141414;
+    color: white;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    scroll-behavior: smooth;
+}
+
+h1 {
+    text-align: center;
+    color: #e50914;
+    margin-bottom: 10px;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.header-text {
+    flex: 1;
+}
+
+.header-gif {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(229, 9, 20, 0.5);
+}
+
+.list-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.list-section {
+    width: 45%;
+    margin-bottom: 30px;
+}
+
+@media (max-width: 768px) {
+    .list-section {
+        width: 100%;
+    }
+    .header-container {
+        flex-direction: column;
+    }
+    .header-gif {
+        margin-top: 15px;
+    }
+}
+
+h2 {
+    border-bottom: 2px solid #e50914;
+    padding-bottom: 5px;
+}
+.top-shows {
+    list-style-type: none;
+    counter-reset: netflix-counter;
+    padding: 0;
+}
+
+.top-shows li {
+    counter-increment: netflix-counter;
+    margin-bottom: 15px;
+    background-color: #333;
+    padding: 15px;
+    border-radius: 5px;
+    position: relative;
+    padding-left: 50px;
+    display: flex;
+    align-items: center;
+}
+
+.top-shows li::before {
+    content: counter(netflix-counter);
+    background-color: #e50914;
+    color: white;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 50%;
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.game-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.game-list li {
+    margin-bottom: 15px;
+    background-color: #333;
+    padding: 15px 15px 15px 50px;
+    border-radius: 5px;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.game-list li::before {
+    content: "🎮";
+    position: absolute;
+    left: 15px;
+    font-size: 1.2rem;
+}
+.top-shows li:hover, .game-list li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(229, 9, 20, 0.3);
+    transition: all 0.3s ease;
+}
+.item-image {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-right: 15px;
+}
+
+.item-content {
+    flex: 1;
+}
+nav {
+    background-color: #333;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    padding: 5px 10px;
+    border-radius: 3px;
+    transition: background-color 0.3s;
+}
+
+nav a:hover {
+    background-color: #e50914;
+}
+footer {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #333;
+    color: #888;
+}

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REM vs PX Comparison</title>
+    <style>
+        html {
+            font-size: 16px;
+            font-family: Arial, sans-serif;
+        }
+        
+        body {
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #1a0033, #33006f, #5c0099);
+            color: #f8f9fa;
+            min-height: 100vh;
+        }
+        
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section {
+            flex: 1;
+            min-width: 300px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            backdrop-filter: blur(5px);
+        }
+        
+        .px-section {
+            background-color: rgba(70, 12, 120, 0.6);
+            border-left: 4px solid #5e60ce;
+        }
+        
+        .rem-section {
+            background-color: rgba(120, 12, 170, 0.6);
+            border-left: 4px solid #7b2cbf;
+        }
+        .px-section h2 {
+            font-size: 24px;
+            margin-bottom: 16px;
+            color: #c77dff;
+        }
+        
+        .px-section p {
+            font-size: 16px;
+            line-height: 24px;
+            margin-bottom: 16px;
+        }
+        
+        .px-section .button {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: #5e60ce;
+            color: white;
+            border-radius: 4px;
+            font-size: 16px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .px-section .button:hover {
+            background-color: #6930c3;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        .rem-section h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #e0aaff;
+        }
+        
+        .rem-section p {
+            font-size: 1rem;
+            line-height: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .rem-section .button {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background-color: #7b2cbf;
+            color: white;
+            border-radius: 0.25rem;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .rem-section .button:hover {
+            background-color: #9d4edd;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        
+        .controls {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            background-color: rgba(20, 10, 30, 0.7);
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+        
+        .controls h2 {
+            color: #9d4edd;
+            margin-bottom: 15px;
+        }
+        
+        .font-size-slider {
+            width: 200px;
+            margin: 0 10px;
+            -webkit-appearance: none;
+            height: 8px;
+            border-radius: 4px;
+            background: #33006f;
+            outline: none;
+        }
+        
+        .font-size-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #9d4edd;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .font-size-slider::-webkit-slider-thumb:hover {
+            background: #c77dff;
+            transform: scale(1.1);
+        }
+        
+        .font-size-slider::-moz-range-thumb {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #9d4edd;
+            cursor: pointer;
+            border: none;
+            transition: all 0.2s;
+        }
+        
+        .font-size-slider::-moz-range-thumb:hover {
+            background: #c77dff;
+            transform: scale(1.1);
+        }
+        
+        label {
+            color: #e0aaff;
+            font-weight: bold;
+        }
+        
+        #size-display {
+            background-color: rgba(120, 12, 170, 0.3);
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-family: monospace;
+            font-weight: bold;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="controls">
+        <h2>Try changing the root font size</h2>
+        <label for="font-size">Font Size: <span id="size-display">16px</span></label>
+        <input type="range" id="font-size" class="font-size-slider" min="10" max="24" value="16">
+    </div>
+    
+    <div class="container">
+        <div class="section px-section">
+            <h2>Using PX Units</h2>
+            <p>This section uses fixed pixel units for all measurements. Notice how the sizes stay fixed regardless of root font size changes.</p>
+            <p>When viewing on smaller screens or when users change their browser font settings, these pixel-based measurements won't adapt as well.</p>
+            <a href="#" class="button">PX Button</a>
+        </div>
+        
+        <div class="section rem-section">
+            <h2>Using REM Units</h2>
+            <p>This section uses rem units which are relative to the root font size. Notice how everything scales proportionally when the root font size changes.</p>
+            <p>This makes the design more accessible and flexible across different devices and user preferences.</p>
+            <a href="#" class="button">REM Button</a>
+        </div>
+    </div>
+    
+    <script>
+        const slider = document.getElementById('font-size');
+        const sizeDisplay = document.getElementById('size-display');
+        
+        slider.addEventListener('input', function() {
+            const size = this.value;
+            document.documentElement.style.fontSize = size + 'px';
+            sizeDisplay.textContent = size + 'px';
+        });
+    </script>
+</body>
+</html>

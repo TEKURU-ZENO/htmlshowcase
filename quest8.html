@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cosmic Registration Form</title>
+    <link rel="stylesheet" href="quest8.css">
+</head>
+<body>
+    <div class="cosmic-signup-wrapper">
+        <div class="container">
+            <div class="form-container">
+                <h1 class="form-title">Create Your Account</h1>
+                
+                <form action="#" method="post" novalidate>
+                    <div class="input-box">
+                        <label for="name" class="required">Full Name</label>
+                        <input 
+                            type="text" 
+                            id="name" 
+                            name="name"
+                            placeholder=" " 
+                            required
+                        >
+                        <div class="error-message">Please enter your full name.</div>
+                    </div>
+                    
+                    <div class="input-box">
+                        <label for="email" class="required">Email Address</label>
+                        <input 
+                            type="email" 
+                            id="email" 
+                            name="email" 
+                            placeholder=" " 
+                            required 
+                            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                        >
+                        <div class="error-message">Please enter a valid email address.</div>
+                        <div class="requirements">Format: username@domain.com</div>
+                    </div>
+                    
+                    <div class="input-box">
+                        <label for="password" class="required">Password</label>
+                        <input 
+                            type="password" 
+                            id="password" 
+                            name="password" 
+                            placeholder=" " 
+                            required 
+                            minlength="8"
+                            pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"
+                        >
+                        <div class="error-message">Password must meet all requirements below.</div>
+                        <div class="password-strength"></div>
+                        <div class="requirements">
+                            <p>Password must contain:</p>
+                            <ul>
+                                <li>At least 8 characters</li>
+                                <li>At least one lowercase letter</li>
+                                <li>At least one uppercase letter</li>
+                                <li>At least one number</li>
+                                <li>At least one special character (@$!%*?&)</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="input-box">
+                        <label for="confirm-password" class="required">Confirm Password</label>
+                        <input 
+                            type="password" 
+                            id="confirm-password" 
+                            name="confirm-password" 
+                            placeholder=" " 
+                            required
+                            oninput="this.setCustomValidity(this.value !== document.getElementById('password').value ? 'Passwords do not match.' : '')"
+                        >
+                        <div class="error-message">Passwords do not match.</div>
+                    </div>
+                    
+                    <div class="input-box">
+                        <label for="gender" class="required">Gender</label>
+                        <div class="radio-input">
+                            <label class="label">
+                                <input type="radio" id="male" name="gender" value="male" required>
+                                <div class="text">Male</div>
+                            </label>
+                            <label class="label">
+                                <input type="radio" id="female" name="gender" value="female">
+                                <div class="text">Female</div>
+                            </label>
+                            <label class="label">
+                                <input type="radio" id="other" name="gender" value="other">
+                                <div class="text">Other</div>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="input-box">
+                        <label for="subscription" class="required">Subscription Plan</label>
+                        <div class="radio-input">
+                            <label class="label">
+                                <input type="radio" id="basic" name="subscription" value="basic" required>
+                                <div class="text">Basic (Free)</div>
+                            </label>
+                            <label class="label">
+                                <input type="radio" id="premium" name="subscription" value="premium">
+                                <div class="text">Premium ($9.99/month)</div>
+                            </label>
+                            <label class="label">
+                                <input type="radio" id="pro" name="subscription" value="pro">
+                                <div class="text">Professional ($19.99/month)</div>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="input-box">
+                        <label for="country" class="required">Country</label>
+                        <select id="country" name="country" required>
+                            <option value="" selected disabled>Select your country</option>
+                            <option value="us">United States</option>
+                            <option value="ca">Canada</option>
+                            <option value="uk">United Kingdom</option>
+                            <option value="au">Australia</option>
+                            <option value="fr">France</option>
+                            <option value="de">Germany</option>
+                            <option value="jp">Japan</option>
+                            <option value="in">India</option>
+                            <option value="br">Brazil</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">Create Account</button>
+                    
+                    <div class="form-link">
+                        Already have an account? <a href="#">Sign In</a>
+                    </div>
+                    
+                    <div class="form-footer">
+                        <p>Fields marked with * are required</p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

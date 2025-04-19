@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Positioning Power</title>
+    <link rel="stylesheet" href="quest13.css">
+</head>
+<body>
+    <header class="fixed-header">
+        <h1>CSS Positioning Power</h1>
+    </header>
+    
+    <div class="container">
+        <section>
+            <h2>CSS Position Property Examples</h2>
+            <p>The CSS <span class="code">position</span> property is used to specify how an element is positioned in a document. This page demonstrates the three most common positioning methods: fixed, relative, and absolute.</p>
+        </section>
+        <section>
+            <h2>Relative Positioning</h2>
+            <p>With <span class="code">position: relative</span>, an element is positioned relative to its normal position. Setting the top, right, bottom, and left properties will move the element from its normal position.</p>
+            
+            <div class="relative-container">
+                <span class="position-indicator">position: relative</span>
+                <div class="relative-box">
+                    This box is positioned relatively.
+                </div>
+            </div>
+        </section>
+        <section>
+            <h2>Absolute Positioning</h2>
+            <p>With <span class="code">position: absolute</span>, an element is positioned relative to its nearest positioned ancestor (an element with position other than static). If no positioned ancestors exist, it uses the document body.</p>
+            
+            <div class="absolute-container">
+                <span class="position-indicator">Container: position: relative</span>
+                <div class="absolute-box">
+                    This box is positioned absolutely.
+                </div>
+            </div>
+        </section>
+        <section>
+            <h2>Fixed Positioning</h2>
+            <p>With <span class="code">position: fixed</span>, an element is positioned relative to the viewport, which means it always stays in the same place even if the page is scrolled.</p>
+            <p>Examples of fixed positioning on this page:</p>
+            <ul>
+                <li>The header at the top of the page</li>
+                <li>The chat button in the bottom right corner</li>
+            </ul>
+            <p>Try scrolling this page to see how these elements stay in place.</p>
+        </section>
+        <section>
+            <h2>Stacked Elements with z-index</h2>
+            <p>The <span class="code">z-index</span> property specifies the stack order of an element. An element with greater stack order is always in front of an element with a lower stack order.</p>
+            
+            <div class="stacked-container">
+                <span class="position-indicator">Stacked Elements</span>
+                <div class="stacked-box box1">z-index: 3</div>
+                <div class="stacked-box box2">z-index: 2</div>
+                <div class="stacked-box box3">z-index: 1</div>
+            </div>
+        </section>
+    </div>
+    <div class="chat-button">
+        <span class="chat-icon">💬</span>
+    </div>
+</body>
+</html>

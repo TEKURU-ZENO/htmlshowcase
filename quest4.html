@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box Model Visualized</title>
+    <link rel="stylesheet" href="quest4.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1 class="page-title">CSS Box Model Visualization</h1>
+    
+    <div class="container">
+        <div class="box-container">
+            <span class="margin-label">Margin</span>
+            <span class="border-label">Border</span>
+            <span class="padding-label">Padding</span>
+            
+            <div class="box">
+                <h2>Content Area</h2>
+                <p>This is the actual content of the box where text and images appear.</p>
+                <span class="content-label">Content</span>
+            </div>
+        </div>
+        
+        <div class="box-labels">
+            <h2>Box Model Components</h2>
+            <ul>
+                <li><strong>Content:</strong> The inner area where your text and images appear. This is where the actual information lives.</li>
+                <li><strong>Padding:</strong> The space between the content and the border. It gives breathing room to your content.</li>
+                <li><strong>Border:</strong> The line that wraps around the padding and content. It defines the visible boundary of the element.</li>
+                <li><strong>Margin:</strong> The invisible space outside the border that creates separation between this element and surrounding elements.</li>
+            </ul>
+            <p>The total width/height of an element = content width/height + padding (left + right / top + bottom) + border (left + right / top + bottom) + margin (left + right / top + bottom)</p>
+        </div>
+    </div>
+</body>
+</html>
